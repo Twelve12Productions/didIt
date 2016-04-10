@@ -117,6 +117,8 @@ class Main extends Component {
 							style={styles.searchInput}
 							value={this.state.username}
 							onChange={this.handleChange.bind(this)} 
+							autoCapitalize="none"
+							autoCorrect={false}
 						/>
 						<TouchableHighlight
 							style={styles.button}
@@ -129,7 +131,7 @@ class Main extends Component {
 
 				<ActivityIndicatorIOS
 					animating={this.state.isLoading}
-					color='#111'
+					color='#fff'
 					size="large" />
 
 				{showErr}
