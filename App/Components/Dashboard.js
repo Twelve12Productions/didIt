@@ -10,6 +10,7 @@ import React, {
 import api from '../Utils/api';
 import Profile from './Profile';
 import Repositories from './Repositories';
+import Notes from './Notes';
 
 var styles = StyleSheet.create({
   container: {
@@ -67,7 +68,18 @@ class Dashboard extends Component {
 	}
 	
 	goToNotes(){
-		console.log('Going to Notes');
+		api.getNotes(this.props.userInfo.login)
+      		.then((jsonRes) => {
+        		jsonRes = jsonRes || {};
+        		this.props.navigator.push({
+          			component: Notes,
+          			title: 'Notes',
+          			passProps: {
+            			notes: jsonRes,
+            			userInfo: this.props.userInfo
+          			}
+        	});
+      	});
 	}
 
 
