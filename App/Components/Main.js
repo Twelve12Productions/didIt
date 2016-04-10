@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     marginTop: 65,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#48BBEC'
+    backgroundColor: '#282828'
   },
   title: {
     marginBottom: 20,
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: '#111',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    letterSpacing: 2
   },
   button: {
     height: 45,
