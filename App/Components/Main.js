@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 8,
-    color: 'white'
+    color: 'white',
+    textAlign: 'center'
   },
   buttonText: {
     fontSize: 18,
