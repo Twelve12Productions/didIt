@@ -44,7 +44,7 @@ export default class DidIt extends Component {
     }
 
     componentDidMount() {
-        let {getDidIt, setPerson} = this.props,
+        let { getDidIt, setPerson } = this.props,
             personId;
 
         AsyncStorage.getItem(DID_IT, (err, result) => {
@@ -58,11 +58,11 @@ export default class DidIt extends Component {
             getDidIt(personId);
         }
 
-        setPerson({id: personId, times: 0});
+        setPerson({ id: personId, times: 0 });
     }
 
     componentDidUpdate(previousProps, previousState) {
-        let {didIt: {person, personNotFound}, incrementDidIt} = this.props;
+        let { didIt: { person, personNotFound }, incrementDidIt } = this.props;
 
         if (personNotFound && previousProps.didIt.personNotFound !== personNotFound) {
             incrementDidIt(person);
@@ -74,8 +74,8 @@ export default class DidIt extends Component {
     }
 
     render() {
-        let {didIt: {person, processing}} = this.props,
-            {times} = person;
+        let { didIt: { person, processing } } = this.props,
+            { times } = person;
 
         return (
             <View style={styles.mainContainer}>
@@ -88,5 +88,4 @@ export default class DidIt extends Component {
             </View>
         );
     }
-
 }
