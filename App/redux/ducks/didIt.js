@@ -1,5 +1,5 @@
 import { post, get } from './../../convenience/functions';
-import { MONGO_LAB }from '../../constants/endpoints';
+import { MONGO_LAB } from '../../constants/endpoints';
 
 const POST_DID_IT_REQUEST = 'POST_DID_IT_REQUEST';
 const POST_DID_IT_SUCCESS = 'POST_DID_IT_SUCCESS';
@@ -25,7 +25,7 @@ const initialState = {
 };
 
 export default (state = initialState, action = null) => {
-    switch (action.type) {
+    switch( action.type ) {
         case SET_PERSON:
             return Object.assign({}, state, {
                 person: action.person
@@ -46,7 +46,7 @@ export default (state = initialState, action = null) => {
         case GET_DID_IT_FAIL:
             let personNotFound = false;
 
-            if (action.error.message === 'Document not found') {
+            if ( action.error.message === 'Document not found' ) {
                 personNotFound = true;
             }
 

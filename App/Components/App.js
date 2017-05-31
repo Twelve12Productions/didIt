@@ -1,4 +1,4 @@
-import React, { Component, View, Text } from 'react-native';
+import React, { Component } from 'react';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -12,10 +12,7 @@ let middleware = [
     thunk
 ];
 
-const createStoreWithMiddleware = compose(
-    applyMiddleware(...middleware)
-)(createStore);
-
+const createStoreWithMiddleware = compose(applyMiddleware(...middleware))(createStore);
 const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 

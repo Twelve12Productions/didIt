@@ -1,18 +1,27 @@
 {
-  "name": "DidIt",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "start-android": "react-native run-android"
-  },
-  "dependencies": {
-    "react": "^0.14.8",
-    "react-native": "^0.23.1",
-    "react-redux": "^4.4.2",
-    "redux": "^3.4.0",
-    "redux-thunk": "^2.0.1"
-  },
-  "author": "kshreve@gmail.com",
-  "license": "MIT"
+    "name":            "DidIt",
+    "version":         "1.0.0",
+    "private":         true,
+    "main":            "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+    "scripts":         {
+        "start":   "react-native-scripts start",
+        "eject":   "react-native-scripts eject",
+        "android": "react-native-scripts android",
+        "ios":     "react-native-scripts ios"
+    },
+    "dependencies":    {
+        "expo":         "^17.0.0",
+        "react":        "16.0.0-alpha.6",
+        "react-native": "^0.44.0",
+        "react-redux":  "^5.0.5",
+        "redux":        "^3.6.0",
+        "redux-thunk":  "^2.2.0"
+    },
+    "devDependencies": {
+        "react-native-scripts": "0.0.30",
+        "jest-expo":            "~1.0.1",
+        "react-test-renderer":  "16.0.0-alpha.6"
+    },
+    "author":          "kshreve@gmail.com",
+    "license":         "MIT"
 }

@@ -1,4 +1,5 @@
-import React, { Component, StyleSheet, Text, View, TextInput, TouchableHighlight, ActivityIndicatorIOS, AsyncStorage } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableHighlight, AsyncStorage } from 'react-native';
 
 import { DID_IT } from './../constants/strings';
 import { randomGuid } from './../convenience/functions';
@@ -7,7 +8,7 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex:            1,
         padding:         30,
-        marginTop:       65,
+        marginTop:       0,
         flexDirection:   'column',
         justifyContent:  'center',
         backgroundColor: '#282828'
@@ -39,10 +40,6 @@ const styles = StyleSheet.create({
 });
 
 export default class DidIt extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         let { getDidIt, setPerson } = this.props,
             personId;
@@ -51,7 +48,7 @@ export default class DidIt extends Component {
             personId = result;
         });
 
-        if (!personId) {
+        if ( !personId ) {
             personId = randomGuid();
             AsyncStorage.setItem(DID_IT, personId);
         } else {
@@ -61,10 +58,10 @@ export default class DidIt extends Component {
         setPerson({ id: personId, times: 0 });
     }
 
-    componentDidUpdate(previousProps, previousState) {
+    componentDidUpdate(previousProps) {
         let { didIt: { person, personNotFound }, incrementDidIt } = this.props;
 
-        if (personNotFound && previousProps.didIt.personNotFound !== personNotFound) {
+        if ( personNotFound && previousProps.didIt.personNotFound !== personNotFound ) {
             incrementDidIt(person);
         }
     }
